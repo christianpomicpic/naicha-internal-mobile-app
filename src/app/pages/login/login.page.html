@@ -1,30 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login Page</ion-title>
+    <ion-title>
+    	<span >Login Page</span>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="primary">
 	<div class="form-wrapper">
-		<div class="content-wrapper" style="padding-top: 45px;padding-bottom: 10px;">
-			Fill up the form below to access your account.
+		<div style="padding-top: 45px; padding-bottom: 20px;">
+			<img src="/assets/naicha-logo-1.jpg" style="width: 100%; height: auto;">
+		</div>
+
+		<div class="container">
+			<input type="email" class="custom-input border-white bg-transparent text-white" placeholder="Enter Email Address Here..." name="">
+			<p></p>
+
+			<input type="password" class="custom-input border-white bg-transparent text-white" placeholder="Enter Password Here..." name="">
+			<p></p>
 		</div>
 			
-		<ion-list>
-			<ion-item>
-				<ion-label>Email</ion-label>
-				<ion-input [(ngModel)]="loginForm.email"></ion-input>
-			</ion-item>
+			
 
-			<ion-item>
-				<ion-label>Password</ion-label>
-				<ion-input type="password"></ion-input>
-			</ion-item>
-		</ion-list>
-
-		<div class="content-wrapper">
-
-			<ion-button expand="block" color="primary" (click)="handleLoginSubmission()">Login Account</ion-button>
+		<div class="content-wrapper" style="padding-top: 10px;">
+			<ion-button expand="block" color="tertiary" (click)="handleLoginSubmission()">Login Account</ion-button>
 		</div>
 	</div>
 </ion-content>
