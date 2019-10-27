@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login Page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="form-wrapper">
+		<div class="content-wrapper" style="padding-top: 45px;padding-bottom: 10px;">
+			Fill up the form below to access your account.
+		</div>
+			
+		<ion-list>
+			<ion-item>
+				<ion-label>Email</ion-label>
+				<ion-input [(ngModel)]="loginForm.email"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label>Password</ion-label>
+				<ion-input type="password"></ion-input>
+			</ion-item>
+		</ion-list>
+
+		<div class="content-wrapper">
+
+			<ion-button expand="block" color="primary" (click)="handleLoginSubmission()">Login Account</ion-button>
+		</div>
+	</div>
+</ion-content>
