@@ -1,11 +1,43 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Create User</ion-title>
+    <ion-buttons slot="start">
+
+  		<ion-back-button></ion-back-button>
+  	</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content  color="primary">
 	<div class="container">
-      	<input type="email" class="border-white text-white custom-input bg-transparent" placeholder="Enter Email Address Here..." name="" readonly="" (click)="showMenu()" [(ngModel)]="createUser.gender">
+      	<div class="container">
+			<input type="text" class="border-white text-white custom-input bg-transparent" placeholder="Enter First Name Here..." name="" [(ngModel)]="createUser.firstName">
+			<p></p>
+
+			<input type="text" class="border-white text-white custom-input bg-transparent" placeholder="Enter Last Name Here..." name="" [(ngModel)]="createUser.lastName">
+			<p></p>
+
+			<input type="text" class = "border-white text-white custom-input bg-transparent" placeholder="Select Account Type Here..." name="" [(ngModel)]="createUser.accountType"
+			(click)="showMenu('account_type', [
+				{ text: 'Administrator', value: 'Administrator' },
+				{ text: 'Employee', value: 'Employee' }
+			])">
+			<p></p>
+
+			<input type="email" class="border-white text-white custom-input bg-transparent" placeholder="Enter Email Address Here..." name="" [(ngModel)]="createUser.email">
+			<p></p>
+
+			<input type="password" class="border-white text-white custom-input bg-transparent" placeholder="Enter Password Here..." name="" [(ngModel)]="createUser.password">
+			<p></p>
+
+			<input type="password" class = "border-white text-white custom-input bg-transparent" placeholder="Confirm New Password Here..." name="" [(ngModel)]="createUser.confirmPassword">
+			<p></p>
+		</div>
+		<div class="content-wrapper" style="padding-top: 10px;">
+			<ion-button expand="block" color="tertiary" (click)="handleSubmission()">
+				Create New Account
+			</ion-button>
+	
+		</div>
     </div>
 </ion-content>

@@ -8,6 +8,9 @@ const routes: Routes = [
   { path: 'create-user', loadChildren: './pages/create-user/create-user.module#CreateUserPageModule' },
   { path: 'forgot-password', loadChildren: './pages/forgot-password/forgot-password.module#ForgotPasswordPageModule' },
   { path: 'reset-password', loadChildren: './pages/reset-password/reset-password.module#ResetPasswordPageModule' },
+  { path: 'user-management', loadChildren: './pages/user-management/user-management.module#UserManagementPageModule' },
+  { path: 'inventory', loadChildren: './pages/inventory/inventory.module#InventoryPageModule' },
+  { path: 'settings', loadChildren: './pages/settings/settings.module#SettingsPageModule' },
 ];
 
 @NgModule({
