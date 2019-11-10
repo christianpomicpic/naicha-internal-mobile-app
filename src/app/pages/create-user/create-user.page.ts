@@ -70,7 +70,7 @@ export class CreateUserPage implements OnInit {
 		});
 	}
 
-	handleSubmission(){
+	 async handleSubmission(){
 		console.log("FORM TO SUBMIT: ", this.createUser);
 	}
 }

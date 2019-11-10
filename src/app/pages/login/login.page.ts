@@ -28,25 +28,25 @@ export class LoginPage implements OnInit {
 
 
 	async handleLoginSubmission(){
-    
-    this.http.post('http://localhost/naicha/authentication.php', JSON.stringify(this.loginForm))
-    .subscribe(async (response) => {
-      console.log("RESPONSE IS: ",response);
-      if(!response.is_logged_in){
-        const alert = await this.alertController.create({
-          header: 'Error!',
-          subHeader: 'Login Failed',
-          message: response.error_message,
-          buttons: ['OK']
-        });
+    console.log("login form: ", this.loginForm);
+    // this.http.post('http://localhost/naicha/authentication.php', JSON.stringify(this.loginForm))
+    // .subscribe(async (response = {}) => {
+    //   console.log("RESPONSE IS: ",response);
+    //   if(!response.is_logged_in){
+    //     const alert = await this.alertController.create({
+    //       header: 'Error!',
+    //       subHeader: 'Login Failed',
+    //       message: response.error_message,
+    //       buttons: ['OK']
+    //     });
 
-        await alert.present();
-      }
-      else{
-        localStorage.setItem('passport_token', response.token);
-        this.navCtrl.navigateForward('/home');
-      }
-    });
+    //     await alert.present();
+    //   }
+    //   else{
+    //     localStorage.setItem('passport_token', response.token);
+    //     this.navCtrl.navigateForward('/home');
+    //   }
+    // });
 
   //   // http://localhost/naicha/login.php
 

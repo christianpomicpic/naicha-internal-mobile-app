@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-reset-password',
@@ -11,7 +13,7 @@ export class ResetPasswordPage implements OnInit {
 
   	constructor() { 
   		this.resetpassword = {
-  			emailAddress: '',
+  			email: '',
   			newPassword:'',
   			confirmedNewPassword:'',  			
   		};
@@ -24,7 +26,7 @@ export class ResetPasswordPage implements OnInit {
   	}
 
 
-  	handleLoginSubmission(){
+  	async handleLoginSubmission(){
   		console.log("LOGIN FORM: ", this.resetpassword);
   	}
 }

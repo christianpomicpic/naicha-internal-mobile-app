@@ -1,12 +1,65 @@
 <ion-header>
+
   <ion-toolbar>
+
+  	
   	<ion-buttons slot="start">
-  		<ion-back-button></ion-back-button>
-  	</ion-buttons>
+					<ion-back-button> </ion-back-button>
+													</ion-buttons>
+
     <ion-title>Settings</ion-title>
+
   </ion-toolbar>
+
 </ion-header>
+ 
 
-<ion-content>
+<ion-content color="primary">
 
+	
+	<div class="container">
+
+      	<div class="container">
+      				<ion-chip>
+	
+  		<h3><ion-label style="padding-right: 30px">Profile  </ion-label></h3>
+	
+  					</ion-chip>
+  					<p></p>
+
+
+<input type="email" class="border-white text-white custom-input bg-transparent" placeholder="Enter Email Address Here..." name="" [(ngModel)]="settings.email">
+			<p></p>
+
+			
+<input type="text" class="border-white text-white custom-input bg-transparent" placeholder="Enter First Name Here..." name=""
+[(ngModel)]="settings.firstName">
+<p></p>
+
+<input type="text" class="border-white text-white custom-input bg-transparent" placeholder="Enter Last Name Here..." name="" [(ngModel)]="settings.lastName">
+<p></p>
+
+<input type="Old Password" class = "border-white text-white custom-input bg-transparent" placeholder="Old Password" name="" [(ngModel)] = "settings.oldPassword">
+			<p></p>
+
+<input type="New Password" class = "border-white text-white custom-input bg-transparent" placeholder="New Password" name="" [(ngModel)] = "settings.newPassword">
+			<p></p>
+
+<input type="password" class="border-white text-white custom-input bg-transparent" placeholder="Confirmed New Password..." name="" [(ngModel)]="settings.password">
+		
+
+
+		</div>
+		<div class="content-wrapper" style="padding-top: 10px;">
+			<ion-button expand="block" color="tertiary" (click)="handleSubmission()">
+				Save Changes
+			</ion-button>
+	
+		</div>
+    </div>
+			
+			
+
+		
+	
 </ion-content>
