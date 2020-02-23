@@ -1,0 +1,33 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Branch Management</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div style="padding: 20px 10px;">
+		<ion-button expand="block" color="tertiary" (click)="openBranchForm('create')">Create New Branch</ion-button>
+		<ion-list>
+			<ion-item *ngFor="let branch of branchList">
+				<ion-label>
+					<span style="padding-left: 10px; display: block;">
+						<span style="display: block; margin-top: 25px;">{{ branch.name }}</span>
+
+						<div style="display: block; text-align: right;">
+							<span style="margin-top: 10px; display: inline-block; text-align: right;" (click)="openBranchRecord(branch)">
+								<small style="margin-right: 15px;">MORE INFO</small>
+							</span>
+							<span style="margin-top: 10px; display: inline-block; text-align: right;" (click)="openBranchForm('update', branch)">
+								<small>UPDATE</small>
+							</span>
+						</div>
+							
+					</span>
+				</ion-label>
+			</ion-item>
+		</ion-list>
+	</div>
+</ion-content>

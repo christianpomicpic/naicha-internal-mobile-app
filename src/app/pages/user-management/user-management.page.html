@@ -1,7 +1,6 @@
 <ion-header>
   <ion-toolbar>
   	<ion-buttons slot="start">
-
   		<ion-back-button></ion-back-button>
   	</ion-buttons>
     <ion-title>User Management</ion-title>
@@ -9,7 +8,26 @@
 </ion-header>
 
 <ion-content>
-	
-	<ion-button routerLink ="/create-user" expand="block" color="tertiary" >Create User </ion-button><br>
+	<div style="padding: 20px 10px;">
+		<ion-button expand="block" color="tertiary" (click)="openUserForm('create')">Create New User</ion-button><br>
 
+		<ion-list>
+			<ion-item *ngFor="let user of userList" (click)="handleSelectUser(user)">
+				<ion-avatar>
+					<img src="https://f0.pngfuel.com/png/178/595/black-profile-icon-illustration-user-profile-computer-icons-login-user-avatars-png-clip-art-thumbnail.png">
+				</ion-avatar>
+				<ion-label>
+					<span style="padding-left: 10px; display: block;">
+						<span style="display: block; margin-top: 25px;">{{ user.profile.first_name }} {{ user.profile.last_name }}</span>
+						<small style="display: block;">{{ user.user_role.role.display_name }}</small>
+
+						<span style="margin-top: 10px; display: block; text-align: right;">
+							<small style="margin-right: 15px;">DISABLE</small>
+							<small>DELETE</small>
+						</span>
+					</span>
+				</ion-label>
+			</ion-item>
+		</ion-list>
+	</div>
 </ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>User Form</ion-title>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content  color="primary">
+	<div class="container">
+      	<div class="container">
+			<input type="text" class="border-white text-white custom-input bg-transparent" placeholder="Enter First Name Here..." name="" [(ngModel)]="form.first_name">
+			<p class="warning-msg"><small>{{ apiValidators.first_name }}</small></p>
+
+			<input type="text" class="border-white text-white custom-input bg-transparent" placeholder="Enter Last Name Here..." name="" [(ngModel)]="form.last_name">
+			<p class="warning-msg"><small>{{ apiValidators.last_name }}</small></p>
+
+			<input type="text" class = "border-white text-white custom-input bg-transparent" placeholder="Select Account Type Here..." name="" [(ngModel)]="form.role_label"
+			(click)="showMenu('account_type', [
+				{ text: 'Administrator', value: 1 },
+				{ text: 'Employee', value: 2 }
+			])">
+			<p class="warning-msg"><small>{{ apiValidators.role }}</small></p>
+
+			<input type="email" class="border-white text-white custom-input bg-transparent" placeholder="Enter Email Address Here..." name="" [(ngModel)]="form.email">
+			<p class="warning-msg"><small>{{ apiValidators.email }}</small></p>
+
+			<div class="content-wrapper">
+				<ion-button expand="block" color="tertiary" (click)="handleSubmission()">
+					Submit
+				</ion-button>
+		
+			</div>
+		</div>
+    </div>
+</ion-content>

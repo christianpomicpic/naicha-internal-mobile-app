@@ -5,12 +5,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CreateUserPage } from './create-user.page';
+import { FormBranchPage } from './form-branch.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: CreateUserPage
+    component: FormBranchPage
   }
 ];
 
@@ -21,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [CreateUserPage]
+  declarations: [FormBranchPage]
 })
-export class CreateUserPageModule {}
+export class FormBranchPageModule {}

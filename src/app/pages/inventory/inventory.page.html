@@ -1,12 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-  	<ion-buttons slot="start">
-  		<ion-back-button></ion-back-button>
-  	</ion-buttons>
-    <ion-title>Inventory</ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+		<ion-title>Inventory</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
+	<div style="padding: 20px 10px;">
+		<ion-button expand="block" color="tertiary" (click)="openItemForm('create')">Create New Item</ion-button><br>
 
+		<ion-list>
+			<ion-item *ngFor="let item of itemList">
+				<ion-label>
+					<span style="padding-left: 10px; display: block;">
+						<span style="display: block; margin-top: 25px;">{{ item.name }}</span>
+						<small style="display: inline-block;" *ngFor="let unit of item.information.units; let i = index;">
+							{{ unit }}<span *ngIf="i + 1 < item.information.units.length">, </span>
+						</small>
+
+						<span style="margin-top: 10px; display: block; text-align: right;" (click)="openItemForm('update', item)">
+							<small style="margin-right: 15px;">UPDATE</small>
+						</span>
+					</span>
+				</ion-label>
+			</ion-item>
+		</ion-list>
+	</div>
 </ion-content>

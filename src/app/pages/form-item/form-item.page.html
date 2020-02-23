@@ -1,0 +1,48 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>Item Form</ion-title>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content  color="primary">
+	<div class="container">
+      	<div class="container">
+			<input type="text" class="border-white text-white custom-input bg-transparent" placeholder="Enter Item Name Here..." name="" [(ngModel)]="form.itemName">
+			<p class="warning-msg"><small>{{ apiValidators.itemName }}</small></p>
+
+			<input type="text" class = "border-white text-white custom-input bg-transparent" placeholder="Select Units Here..." name="" [(ngModel)]="form.item_unit_selector"
+			(click)="showMenu('account_type', [
+				{ text: 'Pack', value: 'Pack' },
+				{ text: 'Piece', value: 'Piece' },
+				{ text: 'Bag', value: 'Bag' },
+				{ text: 'Gram', value: 'Gram' },
+				{ text: 'Bag', value: 'Bag' }
+			])">
+			<p class="warning-msg"><small>{{ apiValidators.units }}</small></p>
+
+
+			<div style="width: 100%; margin-top: 10px; margin-bottom: 10px;">
+				<hr>
+				<h5>Selected Units</h5>
+			</div>
+			<ion-list color="primary">
+				<ion-item color="primary" *ngFor="let unit of form.units; let i = index">
+					{{ unit }} - 
+					<a href="javascript:void(0)" (click)="form.units.splice(i, 1)" style="color: yellow; margin-left: 5px;">
+						Remove From List
+					</a>
+				</ion-item>
+			</ion-list>
+			<hr>
+
+			<div class="content-wrapper">
+				<ion-button expand="block" color="tertiary" (click)="handleSubmission()">
+					Submit
+				</ion-button>
+			</div>
+		</div>
+    </div>
+</ion-content>

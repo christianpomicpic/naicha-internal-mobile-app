@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-title>Branch Form</ion-title>
+		<ion-buttons slot="start">
+			<ion-back-button></ion-back-button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content  color="primary">
+	<div class="container">
+      	<div class="container">
+			<input type="text" class="border-white text-white custom-input bg-transparent" placeholder="Enter Branch's Address Here..." name="" [(ngModel)]="form.address">
+			<p class="warning-msg"><small>{{ apiValidators.address }}</small></p>
+
+			<div class="content-wrapper">
+				<ion-button expand="block" color="tertiary" (click)="handleSubmission()">
+					Submit
+				</ion-button>
+			</div>
+		</div>
+    </div>
+</ion-content>
+
